@@ -1,17 +1,17 @@
-﻿using DCS.Shared.Logging.Common;
-using DCS.Shared.Logging.Interfaces;
+﻿using Shared.Logging.Common;
+using Shared.Logging.Interfaces;
 using Hangfire.Server;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace DCS.Service.Logging.Common
+namespace DCS.Service.Logging.CustomLogger.Common
 {
-    public class DCSLogger : IDCSLogger
+    public class Logger : ICustomLogger
     {
 
-        readonly ILogger<DCSLogger> _logger;
+        readonly ILogger<Logger> _logger;
 
-        public DCSLogger(ILogger<DCSLogger> log)
+        public Logger(ILogger<Logger> log)
         {
             _logger = log;
         }
@@ -22,7 +22,7 @@ namespace DCS.Service.Logging.Common
         /// <param name="msg">The populated DcsLogMsg to log</param>
         /// <param name="context">The Hang</param>
         /// <returns></returns>
-        public bool LogMessage(DCSLogMsg msg, PerformContext context)
+        public bool LogMessage(LogMsg msg, PerformContext context)
         {
             //This is the method that actually does the logging and is called from Hangfire.
             //We are jsut going to write to a database

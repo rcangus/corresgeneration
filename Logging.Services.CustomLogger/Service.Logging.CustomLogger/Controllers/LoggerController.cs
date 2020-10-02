@@ -1,24 +1,24 @@
-﻿using DCS.Service.Logging.Common;
-using DCS.Shared.Logging.Common;
+﻿using Service.Logging.Common;
+using Shared.Logging.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace DCS.Service.Logging.Controllers
+namespace Service.Logging.CustomLogger.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DCSLoggerController : ControllerBase
+    public class LoggerController : ControllerBase
     {
         IConfiguration _config;
-        ILogger<DCSLoggerController> _logger;
+        ILogger<LoggerController> _logger;
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="log"></param>
-        public DCSLoggerController(ILogger<DCSLoggerController> log)
+        public LoggerController(ILogger<LoggerController> log)
         {
             _logger = log;
         }
@@ -30,7 +30,7 @@ namespace DCS.Service.Logging.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("LogMessage")]
-        public JsonResult LogMessage(DCSLogMsg msg)
+        public JsonResult LogMessage(LogMsg msg)
         {
             switch (msg.LogLevel)
             {

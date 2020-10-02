@@ -10,12 +10,12 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
 using System.Reflection;
-using DCS.Service.Logging.Common;
-using DCS.Shared.Logging.Interfaces;
-using DCS.Shared.Logging.Queues;
+using Service.Logging.Common;
+using Shared.Logging.Interfaces;
+using Shared.Logging.Queues;
 using Microsoft.Extensions.Logging;
 
-namespace DCS.Service.Logging
+namespace Service.Logging.CustomLogger
 {
     public class Startup
     {

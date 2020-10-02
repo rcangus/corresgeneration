@@ -6,9 +6,9 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace DCS.Shared.Logging.Common
+namespace Logging.Services.Shared.Common
 {
-    public class DCSLogMsg
+    public class LogMsg
     {
         private static readonly HttpClient client = new HttpClient();
 
@@ -102,7 +102,7 @@ namespace DCS.Shared.Logging.Common
 
         public string ToJsonString()
         {
-            return JsonSerializer.Serialize<DCSLogMsg>(this);
+            return JsonSerializer.Serialize<LogMsg>(this);
         }
 
         /// <summary>

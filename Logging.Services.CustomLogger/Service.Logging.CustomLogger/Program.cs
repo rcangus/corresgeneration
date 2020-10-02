@@ -1,11 +1,11 @@
-using DCS.Service.Logging.Common;
+using Service.Logging.Common;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Configuration;
 
-namespace DCS.Service.Logging
+namespace Service.Logging.CustomLogger
 {
     public class Program
     {
