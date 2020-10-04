@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore Logging.Services.CustomLogger/Service.Logging.CustomLogger.sln
     - name: Build
       run: dotnet build Logging.Services.CustomLogger/Service.Logging.CustomLogger.sln --configuration Release --no-restore
     - name: Test
