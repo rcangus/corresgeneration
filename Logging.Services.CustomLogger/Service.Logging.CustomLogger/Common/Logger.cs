@@ -1,10 +1,10 @@
-﻿using Shared.Logging.Common;
-using Shared.Logging.Interfaces;
-using Hangfire.Server;
+﻿using Hangfire.Server;
+using Logging.Services.Shared.Common;
+using Logging.Services.Shared.Interfaces;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace DCS.Service.Logging.CustomLogger.Common
+namespace Logging.Services.CustomLogger.Common
 {
     public class Logger : ICustomLogger
     {
@@ -28,7 +28,7 @@ namespace DCS.Service.Logging.CustomLogger.Common
             //We are jsut going to write to a database
 
             //_log.LogInformation("{msg.LogDatetime} - {msg.LogLevel} - {msg.Server} - {msg.Application} - {msg.GSScheduleId} - {msg.JGScheduleId} - {msg.JSScheduleId} - {msg.BatchId} - {msg.Message}", msg.LogDatetime, msg.LogLevel, msg.Server, msg.Application, msg.GSScheduleId, msg.JGScheduleId, msg.JSScheduleId, msg.BatchId, msg.Message);
-            
+
             switch (msg.LogLevel)
             {
                 case LogLevel.Trace:
@@ -55,6 +55,11 @@ namespace DCS.Service.Logging.CustomLogger.Common
                     break;
             }
             return true;
+        }
+
+        public bool LogMessageLowPriority(LogMsg msg, PerformContext context)
+        {
+            throw new NotImplementedException();
         }
     }
 }

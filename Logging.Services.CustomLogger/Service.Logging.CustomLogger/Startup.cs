@@ -1,21 +1,16 @@
-﻿using Hangfire;
-using Hangfire.JobsLogger;
-using Hangfire.SqlServer;
+﻿using Logging.Services.CustomLogger.Common;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
 using System.IO;
 using System.Reflection;
-using Service.Logging.Common;
-using Shared.Logging.Interfaces;
-using Shared.Logging.Queues;
-using Microsoft.Extensions.Logging;
 
-namespace Service.Logging.CustomLogger
+namespace Logging.Services.CustomLogger
 {
     public class Startup
     {
@@ -62,14 +57,14 @@ namespace Service.Logging.CustomLogger
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "DCS Logging API",
+                    Title = "Custom Logging API",
                     Version = "v1",
-                    Description = "The DCS Logging API used to manage the Dcs.Services.Logging service via a REST endpoint",
+                    Description = "The DCS Logging API used to manage the Logging.Services.CustomLogger service via a REST endpoint",
                     TermsOfService = new Uri("https://example.com/terms"),
                     Contact = new OpenApiContact
                     {
-                        Name = "ATO",
-                        Email = "dcs@ato.gov.au",
+                        Name = "Custom Logger",
+                        Email = "custom@customlogger.org",
                         Url = new Uri("https://www.ato.gov.au")
                     },
                     License = new OpenApiLicense
@@ -102,7 +97,7 @@ namespace Service.Logging.CustomLogger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "DCS.Service.Logging API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Logging.Services.CustomLogger API V1");
                 c.RoutePrefix = string.Empty;
             });
 

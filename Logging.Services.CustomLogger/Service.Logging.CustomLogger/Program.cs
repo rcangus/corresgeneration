@@ -1,11 +1,9 @@
-using Service.Logging.Common;
+using Logging.Services.CustomLogger.Common;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Configuration;
 
-namespace Service.Logging.CustomLogger
+namespace Logging.Services.CustomLogger
 {
     public class Program
     {
@@ -43,5 +41,5 @@ namespace Service.Logging.CustomLogger
 
 
                 });
-                }
+    }
 }

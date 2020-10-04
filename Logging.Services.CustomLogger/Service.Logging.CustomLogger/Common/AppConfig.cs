@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Reflection;
 
-namespace Service.Logging.CustomLogger.Common
+namespace Logging.Services.CustomLogger.Common
 {
     public class AppConfig
     {

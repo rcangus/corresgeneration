@@ -1,11 +1,11 @@
-﻿using Service.Logging.Common;
-using Shared.Logging.Common;
+﻿using Logging.Services.CustomLogger.Common;
+using Logging.Services.Shared.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace Service.Logging.CustomLogger.Controllers
+namespace Logging.Services.CustomLogger.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
