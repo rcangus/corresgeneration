@@ -18,5 +18,6 @@ namespace Logging.Services.Shared.Interfaces
         [DisplayName("CustomLogger LowPriority Start - {0}")]
         bool LogMessageLowPriority(LogMsg msg, PerformContext context);
 
+        bool AddSoWeCanGetANEwVersion()
     }
 }
