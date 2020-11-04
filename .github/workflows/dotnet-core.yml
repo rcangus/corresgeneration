@@ -21,7 +21,7 @@ jobs:
       env: 
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - name: Install dependencies
-      run: dotnet restore Logging.Services.CustomLogger/Service.Logging.CustomLogger.sln --configfile Logging.Services.CustomLogger/nuget.config
+      run: dotnet restore Logging.Services.CustomLogger/Service.Logging.CustomLogger.sln --configfile Logging.Services.CustomLogger/Service.Logging.CustomLogger/nuget.config
     - name: Build
       run: dotnet build Logging.Services.CustomLogger/Service.Logging.CustomLogger.sln --configuration Release --no-restore
     - name: Test
