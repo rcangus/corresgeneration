@@ -17,11 +17,11 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
-        source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+        source-url: https://nuget.pkg.github.com/rcangus/index.json
       env: 
         NUGET_AUTH_TOKEN: ${{ secrets.PACKAGES_PAT }}
     - name: Install dependencies
-      run: dotnet restore Logging.Services.CustomLogger/Service.Logging.CustomLogger.sln --configfile Logging.Services.CustomLogger/Service.Logging.CustomLogger/nuget.config
+      run: dotnet restore Logging.Services.CustomLogger/Service.Logging.CustomLogger.sln 
     - name: Build
       run: dotnet build Logging.Services.CustomLogger/Service.Logging.CustomLogger.sln --configuration Release --no-restore
     - name: Test
