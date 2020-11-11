@@ -95,6 +95,7 @@ namespace Logging.Services.Shared.Common
             sb.Append("; ");
             sb.Append("Message: ");
             sb.Append(Message);
+            sb.Append("Some change to trigger anotehr build");
 
             return sb.ToString();
 

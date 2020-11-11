@@ -21,8 +21,7 @@ jobs:
       env: 
         NUGET_AUTH_TOKEN: ${{ secrets.PACKAGES_PAT }}
     - name: Install dependencies
-      run: dotnet restore Logging.Services.CustomLogger/Service.Logging.CustomLogger.sln 
+      run: dotnet restore Logging.Services.Shared/Loggingservices.Shared.sln 
     - name: Build
-      run: dotnet build Logging.Services.CustomLogger/Service.Logging.CustomLogger.sln --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet build Logging.Services.Shared/Loggingservices.Shared.sln --configuration Release --no-restore
+    
