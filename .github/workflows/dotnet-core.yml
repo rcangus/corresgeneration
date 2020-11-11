@@ -24,5 +24,4 @@ jobs:
       run: dotnet restore Logging.Services.Shared/Loggingservices.Shared.sln 
     - name: Build
       run: dotnet build Logging.Services.Shared/Loggingservices.Shared.sln --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+    
