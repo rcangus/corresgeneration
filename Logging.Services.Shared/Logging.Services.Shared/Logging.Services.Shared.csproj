@@ -7,6 +7,7 @@
     <Company>GitHub</Company>
     <PackageDescription>Logging Shared Library</PackageDescription>
     <RepositoryUrl>https://github.com/rcangus/corresgeneration</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
     <AssemblyName>Logging.Services.Shared</AssemblyName>
     <RootNamespace>Logging.Services.Shared</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

@@ -3,6 +3,8 @@ name: .NET Core
 on:
   push:
     branches: [ main ]
+    paths: 
+     - 'ConsoleAppToTestPackages/**'
   pull_request:
     branches: [ main ]
 
@@ -19,11 +21,9 @@ jobs:
         dotnet-version: 3.1.301
         source-url: https://nuget.pkg.github.com/rcangus/index.json
       env: 
-        NUGET_AUTH_TOKEN: ${{ secrets.PACKAGES_PAT }}
+        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
     - name: Install dependencies
-      run: dotnet restore Logging.Services.Shared/Loggingservices.Shared.sln 
+      run: dotnet restore ConsoleAppToTestPackages/ConsoleAppToTestPackages.sln 
     - name: Build
-      run: dotnet build Logging.Services.Shared/Loggingservices.Shared.sln --configuration Release --no-restore
-    - name: Publish to GitHub Packages
-    
+      run: dotnet build ConsoleAppToTestPackages/ConsoleAppToTestPackages.sln --configuration Release --no-restore
     

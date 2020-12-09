@@ -25,5 +25,6 @@ jobs:
     - name: Build
       run: dotnet build Logging.Services.Shared/Loggingservices.Shared.sln --configuration Release --no-restore
     - name: Publish to GitHub Packages
+      
     
     
