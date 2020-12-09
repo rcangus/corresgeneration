@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Logging.Services.Shared" Version="1.0.0" />
+   
   </ItemGroup>
 
 </Project>
